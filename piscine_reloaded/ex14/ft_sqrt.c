@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 10:40:31 by jsales-p          #+#    #+#             */
-/*   Updated: 2025/07/11 18:03:02 by jsales-p         ###   ########.fr       */
+/*   Created: 2025/07/11 13:26:49 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/11 18:11:56 by jsales-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int	ft_sqrt(int nb)
 {
-	char	letter;
+	int	sqrt;
+	int	i;
 
-	letter = 'a';
-	while (letter <= 'z')
+	while (i <= nb && sqrt != nb)
 	{
-		ft_putchar(letter);
-		letter++;
+		sqrt = i * i;
+		if (sqrt == nb)
+			return (i);
+		i++;
 	}
+	return (0);
 }

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 10:40:31 by jsales-p          #+#    #+#             */
-/*   Updated: 2025/07/11 18:03:02 by jsales-p         ###   ########.fr       */
+/*   Created: 2025/07/11 14:08:01 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/11 18:12:46 by jsales-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+void	ft_putchar(char c)
 {
-	char	letter;
+	write(1, &c, 1);
+}
 
-	letter = 'a';
-	while (letter <= 'z')
+void	ft_putstr(char *str)
+{
+	while (*str)
 	{
-		ft_putchar(letter);
-		letter++;
+		ft_putchar(*str);
+		str++;
 	}
 }

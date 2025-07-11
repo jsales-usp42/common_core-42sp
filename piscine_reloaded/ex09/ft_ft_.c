@@ -3,26 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ft_.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/10 21:25:14 by marvin            #+#    #+#             */
-/*   Updated: 2025/07/10 21:25:14 by marvin           ###   ########.fr       */
+/*   Created: 2025/07/11 11:08:43 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/11 18:06:57 by jsales-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//#include <stdio.h>
 
-void    ft_ft(int *nbr)
+void	ft_ft(int *nbr)
 {
-    *nbr = 42;
+	*nbr = 42;
 }
-
-/*int main(void)
-{
-    int n = 1;
-    int *nbr = &n;
-
-    printf("Antes: %d", *nbr);
-    ft_ft(nbr);
-    printf("Depois: %d", *nbr);
-    return(0);
-}*/

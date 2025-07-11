@@ -3,29 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/10 21:56:33 by marvin            #+#    #+#             */
-/*   Updated: 2025/07/10 21:56:33 by marvin           ###   ########.fr       */
+/*   Created: 2025/07/11 11:13:09 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/11 18:08:32 by jsales-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-void    ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-    int c;
+	int	c;
 
-    c = *b;
-    b* = a*;
-    a* = c;
-}
-
-int main(void)
-{
-    int x = 1;
-    int y = 2;
-
-    ft_swap(x, y);
-    printf("x = %d e y = %d", x, y);
-    return (0);
+	c = *b;
+	*b = *a;
+	*a = c;
 }

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 10:40:31 by jsales-p          #+#    #+#             */
-/*   Updated: 2025/07/11 18:03:02 by jsales-p         ###   ########.fr       */
+/*   Created: 2025/07/11 14:22:25 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/11 18:15:55 by jsales-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	letter;
-
-	letter = 'a';
-	while (letter <= 'z')
+	while (*s1 || *s2)
 	{
-		ft_putchar(letter);
-		letter++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
+	return (0);
 }
