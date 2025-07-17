@@ -1,21 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 13:21:02 by jsales-p          #+#    #+#             */
-/*   Updated: 2025/07/17 11:13:52 by jsales-p         ###   ########.fr       */
+/*   Created: 2025/07/17 16:29:50 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/17 16:37:19 by jsales-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
+void	ft_foreach(int *tab, nt length, void (*f)(int))
 {
-	if (nb < 0)
-		return (0);
-	if (nb == 0 || nb == 1)
-		return (1);
-	else
-		return (nb * ft_recursive_factorial(nb - 1));
-}
+
