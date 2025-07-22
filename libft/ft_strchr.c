@@ -12,7 +12,7 @@
 
 // Function that points to first character passed as a parameter
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 char	*ft_strchr(const char *s, int c);
@@ -25,7 +25,7 @@ int	main(void)
 	printf("Minha função: %s\n", ft_strchr(s, c));
 	printf("Função original: %s", strchr(s, c));
 	return (0);
-}
+}*/
 
 char	*ft_strchr(const char *s, int c)
 {

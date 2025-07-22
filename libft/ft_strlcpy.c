@@ -13,7 +13,7 @@
 // Function that copies a given number of characters from the source string
 // to the destination string and adds the null terminator at the end
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 char	*ft_strncpy(char *dest, const char *src, size_t n);
@@ -26,7 +26,7 @@ int	main(void)
 	printf("Minha função: %s\n", ft_strncpy(dest, src, 5));
 	printf("Função original: %s", strncpy(dest, src, 5));
 	return (0);
-}
+}*/
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {

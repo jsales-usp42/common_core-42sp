@@ -12,10 +12,9 @@
 
 // Function that points to the last character passed as a parameter
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
-int	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);
 
 int	main(void)
@@ -26,23 +25,15 @@ int	main(void)
 	printf("Minha função: %s\n", ft_strrchr(s, c));
 	printf("Função original: %s", strrchr(s, c));
 	return (0);
-}
+}*/
 
-int	ft_strlen(const char *s)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	return (i);
-}
-
-char	*ft_strrchr(const char *s, int c)
-{
-	int	i;
-
-	i = ft_strlen(s);
 	while (i >= 0)
 	{
 		if (s[i] == c)

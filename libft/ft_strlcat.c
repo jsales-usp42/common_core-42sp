@@ -13,38 +13,29 @@
 // Function to concatenates one string to another according to the number of 
 // characters from the second string passed as a parameter
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 char	*ft_strlcat(char *dest, const char *src, size_t size);
-int		ft_strlen(const char *s);
 
 int	main(void)
 {
 	char	dest[100] = "jessica";
 	char	src[100] = "sales";
 
-	printf("Minha função: %s\n", ft_strlcat(dest, src, 2));
-//	printf("Função original: %s", strlcat(dest, src, 2));
+//	printf("Minha função: %s\n", ft_strlcat(dest, src, 2));
+	printf("Função original: %s", strlcat(dest, src, 2));
 	return (0);
-}
-
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+}*/
 
 char	*ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	int		lengh_dest;
 
-	lengh_dest = ft_strlen(dest);
+	lengh_dest = 0;
+	while (dest[lengh_dest] != '\0')
+		lengh_dest++;
 	i = 0;
 	while (src[i] != '\0' && i < size)
 	{

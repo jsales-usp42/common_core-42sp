@@ -13,7 +13,7 @@
 // Function that counts the number of characters in a string excluding the
 // null terminator
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 int	ft_strlen(const char *s);
@@ -22,9 +22,9 @@ int	main(void)
 {
 	char	*str = "dlaskd012_###";
 	printf("Minha função: %d\n", ft_strlen(str));
-	printf("Função original: %ld", strlen(str));
+	printf("Função original: %lld", strlen(str));
 	return (0);
-}
+}*/
 
 int	ft_strlen(const char *s)
 {

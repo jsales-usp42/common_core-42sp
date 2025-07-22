@@ -14,7 +14,7 @@
 // passed as a parameter and returns the difference between their characters 
 // in the ASCII table
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -24,10 +24,10 @@ int	main(void)
 	char	*s1 = "jessica";
 	char	*s2 = "je9sica";
 
-	printf("Minha função: %d\n", ft_strncmp(s1, s2, 2));
-	printf("Função original: %d", strncmp(s1, s2, 2));
+	printf("Minha função: %d\n", ft_strncmp(s1, s2, 6));
+	printf("Função original: %d", strncmp(s1, s2, 6));
 	return (0);
-}
+}*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
