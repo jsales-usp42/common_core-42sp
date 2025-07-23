@@ -1,5 +1,5 @@
-// Function that changes the first n characters of a string
-// to a character passed as a parameter
+// Function that replaces the first n characters of a string
+// with the character passed as a parameter
 
 /*#include <string.h>
 #include <stdio.h>
