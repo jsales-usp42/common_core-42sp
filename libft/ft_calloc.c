@@ -1,7 +1,7 @@
 // Funtion that allocates memory according to the number of elements
 // passed as a parameter
 
-#include <stdlib.h>
+/*#include <stdlib.h>
 #include <stdio.h>
 
 void	*ft_calloc(size_t nelem, size_t elsize);
@@ -28,7 +28,7 @@ int	main(void)
 	free(p1);
 	free(p2);
 	return (0);
-}
+}*/
 
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
