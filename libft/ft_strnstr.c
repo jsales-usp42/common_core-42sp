@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/26 12:48:53 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/26 12:48:58 by jsales-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Funtion that searches for the little string in the big string
 // according to the number of characteres passed as a parameter
 

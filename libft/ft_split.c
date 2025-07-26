@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/26 12:46:05 by jsales-p          #+#    #+#             */
-/*   Updated: 2025/07/26 12:46:13 by jsales-p         ###   ########.fr       */
+/*   Created: 2025/07/26 16:40:34 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/26 17:50:47 by jsales-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Function that checks if the parameter is a digit between 0 and 9
+// Function that ...
 
-/*#include <ctype.h>
+#include <stdio.h>
 #include <stdio.h>
 
-int	ft_isdigit(int c);
+char	**ft_split(char const *s, char c);
 
 int	main(void)
 {
-	printf("Minha função: %d\n", ft_isdigit(5));
-	printf("Função original: %d", isdigit(5));
-	return (0);
-}*/
+	char	*s = "jessica sales pereira dos santos";
+	char	c = ' ';
+	char	*result;
 
-int	ft_isdigit(int c)
-{
-	if (!(c >= 0 && c <= 9))
-		return (0);
-	return (c);
+	result = ft_split(s, c);
+	return (0);
 }
+
+int	count_spaces(char const *s, char c)
+{
+	int	i;
+	int	spaces;
+
+	i = 0;
+	spaces = 0;
+	while (s[i] != '\0')
+	{
+
+
+char	**ft_split(char const *s, char c)
+{
+	char	**p;
+
+

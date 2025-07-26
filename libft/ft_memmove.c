@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/26 12:53:33 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/07/26 12:53:38 by jsales-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Functions that replaces the first n characteres from the
 // source string to the destinarion string by copying the
 // source into a temporary array for safety
