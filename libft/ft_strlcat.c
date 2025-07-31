@@ -28,7 +28,9 @@ int	main(void)
 	return (0);
 }*/
 
-char	*ft_strlcat(char *dest, const char *src, size_t size)
+#include <stddef.h>
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	int		lengh_dest;
@@ -43,5 +45,5 @@ char	*ft_strlcat(char *dest, const char *src, size_t size)
 		i++;
 	}
 	dest[lengh_dest + i] = '\0';
-	return (dest);
+	return (lengh_dest + i + 1);
 }

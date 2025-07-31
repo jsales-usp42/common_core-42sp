@@ -32,7 +32,10 @@ int	main(void)
 	return (0);
 }*/
 
-int	ft_strlen(char *s)
+#include <stddef.h>
+#include <stdlib.h>
+
+unsigned int	ft_strlen(const char *s)
 {
 	int	i;
 

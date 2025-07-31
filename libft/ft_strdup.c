@@ -32,6 +32,8 @@ int	main(void)
 	return (0);
 }*/
 
+#include <stdlib.h>
+
 char	*ft_strdup(const char *s)
 {
 	int		i;

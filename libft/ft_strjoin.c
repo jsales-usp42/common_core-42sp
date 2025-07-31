@@ -31,6 +31,9 @@ int	main(void)
 	return (0);
 }*/
 
+#include <stdlib.h>
+#include <stddef.h>
+
 int	ft_strlen(char const *s)
 {
 	int	i;

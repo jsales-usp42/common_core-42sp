@@ -29,6 +29,8 @@ int	main(void)
 	return (0);
 }*/
 
+#include <stddef.h>
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*p_s1;

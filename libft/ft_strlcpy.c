@@ -28,7 +28,9 @@ int	main(void)
 	return (0);
 }*/
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+#include <stddef.h>
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
 
@@ -39,5 +41,5 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 		i++;
 	}
 	dest[i] = '\0';
-	return (dest);
+	return (i + 1);
 }

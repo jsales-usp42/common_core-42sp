@@ -28,6 +28,8 @@ int	main(void)
 	return (0);
 }*/
 
+#include <stddef.h>
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;

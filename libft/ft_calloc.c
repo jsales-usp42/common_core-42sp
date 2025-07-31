@@ -42,6 +42,9 @@ int	main(void)
 	return (0);
 }*/
 
+#include <stddef.h>
+#include <stdlib.h>
+
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
 	size_t			i;

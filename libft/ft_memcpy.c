@@ -31,7 +31,9 @@ int	main(void)
 	return (0);
 }*/
 
-void	*ft_mempcy(void *dest, const void *src, size_t n)
+#include <stddef.h>
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;
 	unsigned char	*p_src;
