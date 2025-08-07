@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Function that ...
 
-#include <stdlib.h>
+/*#include <stdlib.h>
 #include <stdio.h>
 
 char	**ft_split(char const *s, char c);
@@ -32,22 +34,42 @@ int	main(void)
 		free (result[i]);
 	free (result);
 	return (0);
-}
+}*/
 
-int	count_delimiter(char const *s, char c)
+int	count_strings(char const *s, char c)
 {
 	int	i;
-	int	delimiter;
+	int	count;
 
 	i = 0;
-	delimiter = 0;
+	count = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-			delimiter++;
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+		{
+			count++;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+		}
 	}
-	return (delimiter);
+	return (count);
+}
+
+char	*copy_string(char const *s, int start, int end)
+{
+	char	*str;
+	int		i;
+
+	str = (char *)malloc((end - start + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	while (start < end)
+		str[i++] = s[start++];
+	str[i] = '\0';
+	return (str);
 }
 
 char	**ft_split(char const *s, char c)
@@ -55,35 +77,24 @@ char	**ft_split(char const *s, char c)
 	char	**p;
 	int		i;
 	int		j;
-	int		k;
 	int		start;
 
-	p = (char **)malloc((count_delimiter(s, c) + 2) * sizeof(*p));
+	p = (char **)malloc((count_strings(s, c) + 1) * sizeof(char *));
 	if (p == NULL)
 		return (NULL);
 	i = 0;
-	k = 0;
-	while (i < count_delimiter(s, c) + 1)
+	j = 0;
+	while (s[i] != '\0')
 	{
-		start = k;
-		while (s[k] != c && s[k] != '\0')
-			k++;
-		p[i] = (char *)malloc((k - start +1) * sizeof(char));
-		if (p[i] == NULL)
-			return (NULL);
-		j = 0;
-		while (j < k - start)
-		{
-			p[i][j] = s[start + j];
-			j++;
-		}
-		p[i][j] = '\0';
-		i++;
-		if (s[k] == c)
-			k++;
-		if (s[k] == '\0')
+		while (s[i] == c)
+			i++;
+		if (s[i] == '\0')
 			break ;
+		start = i;
+		while (s[i] != '\0' && s[i] != c)
+			i++;
+		p[j++] = copy_string(s, start, i);
 	}
-	p[i] = NULL;
+	p[j] = NULL;
 	return (p);
 }
