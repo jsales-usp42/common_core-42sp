@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Functions that replaces the first n characteres from the
-// source string to the destinarion string by copying the
+// source string to the destination string by copying the
 // source into a temporary array for safety
 
 /*#include <string.h>
@@ -33,29 +35,29 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t			i;
 	unsigned char	*p_src;
 	unsigned char	*p_dest;
-	char			temporary[100];
 
-	i = 0;
 	p_src = (unsigned char *)src;
 	p_dest = (unsigned char *)dest;
-	while (p_src[i] != '\0')
+	if (p_src == NULL || p_dest == NULL)
+		return (NULL);
+	if (p_dest == p_src || n == 0)
+		return (dest);
+	if (p_dest < p_src)
 	{
-		temporary[i] = p_src[i];
-		i++;
+		i = -1;
+		while (++i < n)
+			p_dest[i] = p_src[i];
 	}
-	temporary[i] = '\0';
-	i = 0;
-	while (i < n)
+	else
 	{
-		p_dest[i] = temporary[i];
-		i++;
+		i = n + 1;
+		while (--i > 0)
+			p_dest[i - 1] = p_src[i - 1];
 	}
 	return (dest);
 }

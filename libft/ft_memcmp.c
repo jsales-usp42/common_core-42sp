@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Function that returns the difference between the first 
-// differing srings s1 and s2
+// differing strings s1 and s2
 
 /*#include <string.h>
 #include <stdio.h>
@@ -29,22 +31,20 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*p_s1;
 	unsigned char	*p_s2;
 	size_t			i;
 
-	i = 0;
+	if (n == 0)
+		return (0);
 	p_s1 = (unsigned char *)s1;
 	p_s2 = (unsigned char *)s2;
-	while (i < n || p_s1[i] != '\0' || p_s2[i] != '\0')
-	{
-		if (p_s1[i] != p_s2[i])
-			return (p_s1[i] - p_s2[i]);
+	i = 0;
+	while (i < n && p_s1[i] == p_s2[i])
 		i++;
-	}
-	return (0);
+	if (i == n)
+		return (0);
+	return ((unsigned char)p_s1[i] - (unsigned char)p_s2[i]);
 }

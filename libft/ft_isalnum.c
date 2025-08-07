@@ -26,9 +26,9 @@ int	main(void)
 
 int	ft_isalnum(int c)
 {
-	if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
+	if (!((c >= 97 && c <= 122) || (c >= 65 && c <= 90)))
 	{
-		if (!(c >= 0 && c <= 9))
+		if (!(c >= 48 && c <= 57))
 			return (0);
 	}
 	return (c);

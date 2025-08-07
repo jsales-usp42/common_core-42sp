@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Function that copies a given number of characters from the source string
 // to the destination string and adds the null terminator at the end
 
@@ -28,18 +30,21 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	int		lenght_src;
 
+	lenght_src = ft_strlen(src);
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	if (size != 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (src[i] != '\0' && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dest[i] = '\0';
-	return (i + 1);
+	return (lenght_src);
 }

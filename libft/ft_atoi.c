@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Function that transforms digit characters into numeric values
 // in the string
 
@@ -36,7 +38,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	sign = 1;
 	sum = 0;
-	while (nptr[i] == ' ')
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{

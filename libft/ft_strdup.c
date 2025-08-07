@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Function that copies a string to another and returns the
 // pointer to the new string
 
@@ -32,17 +34,14 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stdlib.h>
-
 char	*ft_strdup(const char *s)
 {
 	int		i;
+	size_t	size_s;
 	char	*p;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	p = (char *)malloc(sizeof(i) + 1);
+	size_s = ft_strlen(s);
+	p = (char *)malloc((size_s + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	i = 0;

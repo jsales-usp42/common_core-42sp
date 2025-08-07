@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Funtion that returns a substring from the original string
 
 /*#include <stdio.h>
@@ -32,32 +34,25 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-#include <stdlib.h>
-
-unsigned int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t			i;
 	size_t			j;
+	size_t			size_s;
 	char			*p;
 
-	if (start > ft_strlen(s))
+	if (s == NULL)
+		return (NULL);
+	if (start >= (unsigned int)ft_strlen(s))
 	{
 		p = malloc(1);
 		p[0] = '\0';
 		return (p);
 	}
-	p = (char *)malloc((len + 1) * sizeof(char));
+	size_s = ft_strlen(s) - start;
+	if (size_s > len)
+		size_s = len;
+	p = (char *)malloc((size_s + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	i = start;

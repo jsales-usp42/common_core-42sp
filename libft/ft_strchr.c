@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Function that points to first character passed as a parameter
 
 /*#include <string.h>
@@ -27,20 +29,20 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	unsigned char	c_ascii;
+	int				i;
 
+	c_ascii = (unsigned char)c;
+	if (c_ascii == '\0')
+		return ((char *)s + ft_strlen(s));
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == c_ascii)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)&s[i]);
 	return (NULL);
 }

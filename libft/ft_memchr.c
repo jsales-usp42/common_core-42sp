@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Function that points to the position where the character c is 
 // being searched for
 
@@ -35,18 +37,18 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*p;
+	unsigned char	c_ascii;
 
 	p = (unsigned char *)s;
+	c_ascii = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
-		if (p[i] == c)
+		if (p[i] == c_ascii)
 			return ((void *)(p + i));
 		i++;
 	}

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Functions that removes the characters in 'set' from the beginning and end
 // the original string
 
@@ -36,19 +38,6 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-#include <stdlib.h>
-
-int	ft_strlen(const char *s1)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	return (i);
-}
-
 int	search_initial(char const *s1, char const *set, int index)
 {
 	int	i;
@@ -73,7 +62,7 @@ int	search_final(char const *s1, char const *set, int index)
 	int	j;
 
 	i = index;
-	while (i > 0)
+	while (i >= 0)
 	{
 		j = 0;
 		while (j < ft_strlen(set) && set[j] != s1[i])
@@ -92,16 +81,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		final;
 	char	*p;
 
+	if (s1 == NULL || set == NULL)
+		return ((char *)s1);
 	initial = search_initial(s1, set, 0);
 	final = search_final(s1, set, ft_strlen(s1) - 1);
+	if (initial > final)
+	{
+		p = malloc(1);
+		p[0] = '\0';
+	}
 	p = malloc((final - initial + 2) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	i = 0;
-	while (i <= final - initial)
+	i = -1;
+	while (++i <= final - initial)
 	{
 		p[i] = s1[initial];
-		i++;
 		initial++;
 	}
 	p[i] = '\0';
