@@ -53,7 +53,7 @@ int	search_initial(char const *s1, char const *set, int index)
 			return (i);
 		i++;
 	}
-	return (0);
+	return (i);
 }
 
 int	search_final(char const *s1, char const *set, int index)
@@ -71,34 +71,34 @@ int	search_final(char const *s1, char const *set, int index)
 			return (i);
 		i--;
 	}
-	return (0);
+	return (-1);
+}
+
+char	*ft_strtrim_range(char const *s, int initial, int final)
+{
+	char	*p;
+	int		i;
+
+	i = 0;
+	p = malloc((final - initial + 2) * sizeof(char));
+	if (p == NULL)
+		return (NULL);
+	while (initial <= final)
+		p[i++] = s[initial++];
+	p[i] = '\0';
+	return (p);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
 	int		initial;
 	int		final;
-	char	*p;
 
 	if (s1 == NULL || set == NULL)
-		return ((char *)s1);
+		return (NULL);
 	initial = search_initial(s1, set, 0);
 	final = search_final(s1, set, ft_strlen(s1) - 1);
 	if (initial > final)
-	{
-		p = malloc(1);
-		p[0] = '\0';
-	}
-	p = malloc((final - initial + 2) * sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	i = -1;
-	while (++i <= final - initial)
-	{
-		p[i] = s1[initial];
-		initial++;
-	}
-	p[i] = '\0';
-	return (p);
+		return (ft_strdup(""));
+	return (ft_strtrim_range(s1, initial, final));
 }

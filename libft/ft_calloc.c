@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Funtion that allocates memory according to the number of elements
 // passed as a parameter
 
@@ -42,24 +44,17 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-#include <stdlib.h>
-
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
-	size_t			i;
 	void			*p;
-	unsigned char	*p_aux;
 
-	p = malloc(nelem * elsize);
-	if (p == NULL || nelem == 0 || elsize == 0)
+	if (nelem == 0 || elsize == 0)
+		return (ft_strdup(""));
+	if (nelem > ((size_t) -1 / elsize))
 		return (NULL);
-	p_aux = (unsigned char *)p;
-	i = 0;
-	while (i < nelem * elsize)
-	{
-		p_aux[i] = 0;
-		i++;
-	}
+	p = (void *)malloc(nelem * elsize);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, nelem * elsize);
 	return (p);
 }
