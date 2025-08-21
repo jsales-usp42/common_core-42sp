@@ -55,10 +55,10 @@ int	if_negative(int n, int *is_negative)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
+	char			*str;
 	unsigned int	num;
-	int	i;
-	int	is_negative;
+	int				i;
+	int				is_negative;
 
 	i = size_string(n) - 1;
 	is_negative = 0;
