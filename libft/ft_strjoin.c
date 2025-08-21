@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Funtion that concatenates two strings using dynamic memory allocation
 
 /*#include <stdlib.h>
@@ -30,19 +32,6 @@ int	main(void)
 	free(result);
 	return (0);
 }*/
-
-#include <stdlib.h>
-#include <stddef.h>
-
-int	ft_strlen(char const *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

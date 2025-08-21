@@ -15,6 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	number;
+	int		div;
 
 	if (n == -2147483648)
 		return (ft_putstr_fd("-2147483648", fd));
@@ -23,14 +24,16 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		n = -n;
 	}
-	if (n > 9)
+	div = 1;
+	if (n == 0)
+		return (ft_putchar_fd('0', fd));
+	while (n / div >= 10)
+		div *= 10;
+	while (div > 0)
 	{
-		while (n != 0)
-		{
-			number = n / 10 + '0';
-			ft_putchar_fd(number, fd);
-			n /= 10;
-		}
+		number = n / div + '0';
+		ft_putchar_fd(number, fd);
+		n %= div;
+		div /= 10;
 	}
-	return (ft_putchar_fd(n, fd));
 }

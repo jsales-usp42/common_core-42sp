@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./libft.h"
+
 // Function that copies the first n characters from the
 // source string to the destination string
 
@@ -31,8 +33,6 @@ int	main(void)
 	return (0);
 }*/
 
-#include <stddef.h>
-
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;
@@ -41,6 +41,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	p_src = (unsigned char *)src;
 	p_dest = (unsigned char *)dest;
+	if (p_src == NULL && p_dest == NULL)
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{
