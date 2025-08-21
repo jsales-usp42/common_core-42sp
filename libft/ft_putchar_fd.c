@@ -10,4 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Function that ...
+#include "./libft.h"
+
+void	ft_putchar_df(char c, int fd)
+{
+	write(fd, &c, 1);
+}
