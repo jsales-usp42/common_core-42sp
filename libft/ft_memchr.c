@@ -10,32 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Function that points to the position where the character c is 
-// being searched for
-
-/*#include <string.h>
-#include <stdio.h>
-
-void	*ft_memchr(const void *s, int c, size_t n);
-
-int	main(void)
-{
-	char	*s = "jessica";
-	int	c;
-	int	n;
-	char	*result;
-	char	*result2;
-
-	c = 'i';
-	n = 6;
-	result = ft_memchr(s, c, n);
-	result2 = memchr(s, c, n);
-	printf("Minha função: %s\n", result);
-	printf("Função originagl: %s", result2);
-	return (0);
-}*/
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

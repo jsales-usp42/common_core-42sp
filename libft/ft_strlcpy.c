@@ -10,25 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Function that copies a given number of characters from the source string
-// to the destination string and adds the null terminator at the end
-
-/*#include <string.h>
-#include <stdio.h>
-
-char	*ft_strncpy(char *dest, const char *src, size_t n);
-
-int	main(void)
-{
-	char	dest[100] = "sales";
-	char	src[100] = "jessica";
-
-	printf("Minha função: %s\n", ft_strncpy(dest, src, 5));
-	printf("Função original: %s", strncpy(dest, src, 5));
-	return (0);
-}*/
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

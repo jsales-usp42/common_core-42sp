@@ -10,23 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Function that converts the letter passed as a parameter
-// to lowercase
-
-/*#include <ctype.h>
-#include <stdio.h>
-
-int	ft_tolower(int c);
-
-int	main(void)
-{
-	int	x;
-
-	x = '&';
-	printf("Minha função: %d\n", ft_tolower(x));
-	printf("Função original: %d", tolower(x));
-	return (0);
-}*/
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

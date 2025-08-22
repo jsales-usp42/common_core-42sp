@@ -10,30 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-// Functions that replaces the first n characteres from the
-// source string to the destination string by copying the
-// source into a temporary array for safety
-
-/*#include <string.h>
-#include <stdio.h>
-
-void	*ft_memmove(void *dest, const void *src, size_t n);
-
-int	main(void)
+static char	*if_dest_less_src(unsigned char *dest, unsigned char *src, size_t n)
 {
-	char	src[] = "jessica";
-	char	dest[] = "sales";
-	int	n;
+	size_t	i;
 
-	n = 3;
-	ft_memmove(dest, src, n);
-	memmove(dest, src, n);
-	printf("Minhação função: %s\n", dest);
-	printf("Função original: %s", dest);
-	return (0);
-}*/
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return ((char *)dest);
+}
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -48,16 +38,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (p_dest == p_src || n == 0)
 		return (dest);
 	if (p_dest < p_src)
-	{
-		i = -1;
-		while (++i < n)
-			p_dest[i] = p_src[i];
-	}
+		if_dest_less_src(p_dest, p_src, n);
 	else
 	{
-		i = n + 1;
-		while (--i > 0)
+		i = n;
+		while (i > 0)
+		{
 			p_dest[i - 1] = p_src[i - 1];
+			i--;
+		}
 	}
 	return (dest);
 }

@@ -10,24 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Function that points to the last character passed as a parameter
-
-/*#include <string.h>
-#include <stdio.h>
-
-char	*ft_strrchr(const char *s, int c);
-
-int	main(void)
-{
-	char	*s = "jessica";
-	int	c = 's';
-
-	printf("Minha função: %s\n", ft_strrchr(s, c));
-	printf("Função original: %s", strrchr(s, c));
-	return (0);
-}*/
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

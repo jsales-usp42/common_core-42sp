@@ -10,26 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Funtion that searches for the little string in the big string
-// according to the number of characteres passed as a parameter
-
-/*#include <string.h>
-#include <stdio.h>
-
-char	*ft_strnstr(const char *big, const char *little, size_t len);
-
-int	main(void)
-{
-	char	*big = "jessica";
-	char	*little = "";
-	int	len = 6;
-
-	printf("Minha função: %s\n", ft_strnstr(big, little, len));
-//	printf("Função original: %s", strnstr(big, little, len));
-	return (0);
-}*/
-
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

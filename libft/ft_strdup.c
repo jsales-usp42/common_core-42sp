@@ -10,29 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Function that copies a string to another and returns the
-// pointer to the new string
-
-/*#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-char	*ft_strdup(const char *s);
-
-int	main(void)
-{
-	char	*s = "jessica";
-	char	*ft = ft_strdup(s);
-	char	*or = strdup(s);
-
-	printf("Minha função: %s\n", ft);
-	printf("Função original: %s", or);
-	free(ft);
-	free(or);
-	return (0);
-}*/
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

@@ -10,35 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-// Functions that removes the characters in 'set' from the beginning and end
-// the original string
-
-/*#include <stdlib.h>
-#include <stdio.h>
-
-char	*ft_strtrim(char const *s1, char const *set);
-
-int	ft_strlen(const char *s1);
-
-int	search_initial(char const *s1, char const *set, int index);
-
-int	search_final(char const *s1, char const *set, int index);
-
-int	main(void)
-{
-	char	*s1 = "xyjessicazx";
-	char	*set = "x";
-	char	*result;
-
-	result = ft_strtrim(s1, set);
-	printf("My function: %s", result);
-	free(result);
-	return (0);
-}*/
-
-int	search_initial(char const *s1, char const *set, int index)
+static int	search_initial(char const *s1, char const *set, int index)
 {
 	int	i;
 	int	j;
@@ -56,7 +30,7 @@ int	search_initial(char const *s1, char const *set, int index)
 	return (i);
 }
 
-int	search_final(char const *s1, char const *set, int index)
+static int	search_final(char const *s1, char const *set, int index)
 {
 	int	i;
 	int	j;
@@ -74,7 +48,7 @@ int	search_final(char const *s1, char const *set, int index)
 	return (-1);
 }
 
-char	*ft_strtrim_range(char const *s, int initial, int final)
+static char	*ft_strtrim_range(char const *s, int initial, int final)
 {
 	char	*p;
 	int		i;
@@ -84,15 +58,19 @@ char	*ft_strtrim_range(char const *s, int initial, int final)
 	if (p == NULL)
 		return (NULL);
 	while (initial <= final)
-		p[i++] = s[initial++];
+	{
+		p[i] = s[initial];
+		i++;
+		initial++;
+	}
 	p[i] = '\0';
 	return (p);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		initial;
-	int		final;
+	int	initial;
+	int	final;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);

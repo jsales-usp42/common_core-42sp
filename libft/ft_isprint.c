@@ -10,19 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Function that checks if the parameter is printable
-
-/*#include <ctype.h>
-#include <stdio.h>
-
-int	ft_isprint(int c);
-
-int	main(void)
-{
-	printf("Minha função: %d\n", ft_isprint('\n'));
-	printf("Função original: %d", isprint('\n'));
-	return (0);
-}*/
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

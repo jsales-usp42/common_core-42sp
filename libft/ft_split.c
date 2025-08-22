@@ -10,54 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-// Function that ...
-
-/*#include <stdlib.h>
-#include <stdio.h>
-
-char	**ft_split(char const *s, char c);
-
-int		count_delimiter(char const *s, char c);
-
-int	main(void)
-{
-	char	*s = "jessica sales pereira dos santos";
-	char	c = ' ';
-	char	**result;
-
-	result = ft_split(s, c);
-	for (int i = 0; result[i] != NULL; i++)
-		printf("My function: %s\n", result[i]);
-	for (int i = 0; result[i] != NULL; i++)
-		free (result[i]);
-	free (result);
-	return (0);
-}*/
-
-int	count_strings(char const *s, char c)
+static int	count_strings(char const *s, char c)
 {
 	int	i;
 	int	count;
+	int	in_word;
 
 	i = 0;
 	count = 0;
+	in_word = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-		{
-			count++;
-			while (s[i] != '\0' && s[i] != c)
-				i++;
+		if (s[i] == c)
+			in_word = 0;
+		else
+		{	
+			if (!in_word)
+			{
+				in_word = 1;
+				count++;
+			}
 		}
+		i++;
 	}
 	return (count);
 }
 
-char	*copy_string(char const *s, int start, int end)
+static int	skip_delims(char const *s, int i, char c)
+{
+	while (s[i] == c)
+		i++;
+	return (i);
+}
+
+static char	*copy_string(char const *s, int start, int end)
 {
 	char	*str;
 	int		i;
@@ -67,9 +55,29 @@ char	*copy_string(char const *s, int start, int end)
 		return (NULL);
 	i = 0;
 	while (start < end)
-		str[i++] = s[start++];
+	{
+		str[i] = s[start];
+		i++;
+		start++;
+	}
 	str[i] = '\0';
 	return (str);
+}
+
+static void	*free_split(char **p, int filled)
+{
+	int	i;
+
+	if (p == NULL)
+		return (NULL);
+	i = 0;
+	while (i < filled)
+	{
+		free(p[i]);
+		i++;
+	}
+	free(p);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -86,14 +94,15 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
+		i = skip_delims(s, i, c);
 		if (s[i] == '\0')
 			break ;
 		start = i;
 		while (s[i] != '\0' && s[i] != c)
 			i++;
 		p[j++] = copy_string(s, start, i);
+		if (p[j - 1] == NULL)
+			return (free_split(p, j - 1));
 	}
 	p[j] = NULL;
 	return (p);

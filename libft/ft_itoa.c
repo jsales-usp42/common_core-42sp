@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-int	size_string(int n)
+static int	size_string(int n)
 {
 	int	size;
 
@@ -34,14 +34,14 @@ int	size_string(int n)
 	return (size + 1);
 }
 
-char	*if_zero(char *str)
+static char	*if_zero(char *str)
 {
 	str[0] = '0';
 	str[1] = '\0';
 	return (str);
 }
 
-int	if_negative(int n, int *is_negative)
+static int	if_negative(int n, int *is_negative)
 {
 	unsigned int	num;
 

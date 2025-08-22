@@ -10,21 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Function that checks if a character is a letter of the alphabet
-
-/*#include <ctype.h>
-#include <stdio.h>
-
-int	ft_isalpha(int c);
-
-int	main(void)
-{
-	int	x = 'P';
-	
-	printf("Minha função: %d\n", ft_isalpha(x));
-	printf("Função original: %d", isalpha(x));
-	return (0);
-}*/
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

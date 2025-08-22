@@ -10,24 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Function that points to first character passed as a parameter
-
-/*#include <string.h>
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c);
-
-int	main(void)
-{
-	char	*s = "jessica";
-	int	c = 's';
-
-	printf("Minha função: %s\n", ft_strchr(s, c));
-	printf("Função original: %s", strchr(s, c));
-	return (0);
-}*/
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

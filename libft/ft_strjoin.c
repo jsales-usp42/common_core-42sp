@@ -10,28 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Funtion that concatenates two strings using dynamic memory allocation
-
-/*#include <stdlib.h>
-#include <stdio.h>
-
-char	*ft_strjoin(char const *s1, char const *s2);
-
-int	ft_strlen(char const *s);
-
-int	main(void)
-{
-	char	*s1 = "jessica";
-	char	*s2 = "sales";
-	char	*result;
-
-	result = ft_strjoin(s1, s2);
-	printf("My function: %s", result);
-	free(result);
-	return (0);
-}*/
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

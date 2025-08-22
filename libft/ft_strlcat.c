@@ -10,25 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Function to concatenates one string to another according to the number of 
-// characters from the second string passed as a parameter
-
-/*#include <string.h>
-#include <stdio.h>
-
-char	*ft_strlcat(char *dest, const char *src, size_t size);
-
-int	main(void)
-{
-	char	dest[100] = "jessica";
-	char	src[100] = "sales";
-
-//	printf("Minha função: %s\n", ft_strlcat(dest, src, 2));
-	printf("Função original: %s", strlcat(dest, src, 2));
-	return (0);
-}*/
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsales-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/26 12:50:38 by jsales-p          #+#    #+#             */
-/*   Updated: 2025/07/26 12:50:43 by jsales-p         ###   ########.fr       */
+/*   Created: 2025/08/21 16:24:34 by jsales-p          #+#    #+#             */
+/*   Updated: 2025/08/21 16:45:56 by jsales-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	int	sign;
-	int	sum;
+	char	*p_s;
+	int		i;
 
+	p_s = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (p_s == NULL)
+		return (NULL);
 	i = 0;
-	sign = 1;
-	sum = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (s[i] != '\0')
 	{
-		if (nptr[i] == '-')
-			sign = -1;
+		p_s[i] = (*f)(i, s[i]);
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		sum = (sum * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * sum);
+	p_s[i] = '\0';
+	return (p_s);
 }

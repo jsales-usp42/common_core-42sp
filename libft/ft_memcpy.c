@@ -10,28 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Function that copies the first n characters from the
-// source string to the destination string
-
-/*#include <string.h>
-#include <stdio.h>
-
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-
-int	main(void)
-{
-	char	src[] = "jessica";
-	char	dest[] = "sales";
-	int	n;
-
-	n = 3;
-	memcpy(dest, src, n);
-	printf("Minha função: %s\n", dest);
-//	printf("Função original: %s", dest);
-	return (0);
-}*/
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

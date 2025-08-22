@@ -10,26 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-
-// Function that returns the difference between the first 
-// differing strings s1 and s2
-
-/*#include <string.h>
-#include <stdio.h>
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-
-int	main(void)
-{
-	char	*s1 = "sales";
-	char	*s2 = "sales";
-	int	n = 2;
-
-	printf("Minha função %d\n", ft_memcmp(s1, s2, n));
-	printf("Função orifinal: %d", memcmp(s1, s2, n));
-	return (0);
-}*/
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
